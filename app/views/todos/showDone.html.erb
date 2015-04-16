@@ -1,0 +1,29 @@
+<h2>Todo List</h2>
+
+新增事項:<%= form_for Todo.new do|f|%>
+	<%=f.text_field :eventName%>
+	<%=f.submit%>
+	<%end%>
+<div>
+<%= button_to "All",todos_path,method:"get"%>
+<%= button_to "完成", showDone_todos_path,method:"post"%>
+<%= button_to "尚未完成",showUndone_todos_path,method:"post"%>
+</div>
+
+<ul>
+<%@todos.each do|todo|%>
+<li>
+<% if todo.status==false%>
+<%=todo.eventName%>
+<%= button_to "尚未完成",change_todos_path(todo), method:"get"%>
+<%end%>
+<% if todo.status==true%>
+<%=todo.eventName%>
+<%= button_to "完成",change_todos_path(todo), method:"get"%>
+<%end%>
+<%=link_to "編輯",edit_todo_path(todo)%>
+<%=link_to "刪除",todo_path(todo),method:"delete"%>
+
+</li>
+<%end%>
+</ul>
