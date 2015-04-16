@@ -35,6 +35,7 @@ before_action:find_todo,:only=>[:edit,:destroy,:update,:change]
 	redirect_to root_path
 	else
 		render:new
+
 	end
 	end
 
