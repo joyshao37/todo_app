@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 <% if user_signed_in? %>
 Hello,<%=current_user.name%>!
 <%= link_to "Sign out", destroy_user_session_path,method:'delete' %>
@@ -14,6 +15,24 @@ Hello,<%=current_user.name%>!
 <%= link_to "Sign up", new_user_registration_path %>
 <%= link_to "Sign in", new_user_session_path %>
 <% end %>
+=======
+<header >
+<% if model_signed_in?%>
+<div >
+你好,<%=current_model.name%>
+</div>
+<div >
+<%= link_to "sign out",destroy_model_session_path,method:"delete"%>
+</div>
+<%else%>
+<div >
+<%= link_to "sign up",new_model_registration_path%>
+<%= link_to "sign in",new_model_session_path%>
+</div>
+<%end%>
+
+</header>
+>>>>>>> 47d557b2170b92ce5a903d7838b62e81ca116168
 <%= yield %>
 
 </body>

@@ -12,6 +12,10 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 47d557b2170b92ce5a903d7838b62e81ca116168
 gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
