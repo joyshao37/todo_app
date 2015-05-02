@@ -18,11 +18,11 @@ before_action:find_todo,:only=>[:edit,:destroy,:update,:change]
 	end
 
 	def showDone
-	@todos=Todo.where("status like?",true)
+	@todos = Todo.where(status: true)
 	end
 
 	def showUndone
-	@todos=Todo.where("status like?",false)
+	@todos = Todo.where(status: false)
 	end
 	
 	
